@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 import AdminLayout from './AdminLayout';
 import { getAllCreditProposals, updateCreditProposal } from '../../actions/creditProposalActions';
@@ -19,7 +20,7 @@ const CreditProposalsList =  ({ getAllCreditProposals, updateCreditProposal, pro
     <Row key={id} onClick={() => history.push(`/team-will-bank/admin/credit-proposal/${id}`)}>
       <Cell>{ status || 'none'}</Cell>
       <Cell>{ amount || 'none'}</Cell>
-      <Cell>{ createdAt || 'none'}</Cell>
+      <Cell>{ moment(createdAt).format('YYYY-MM-DD') || 'none'}</Cell>
       <Cell>{ client && client.firstName || 'none'}</Cell>
       <Cell>{ client && client.lastName || 'none'}</Cell>
       <Cell>{ client && <img src={client.photo} style={{ height: '50px', width: '50px', borderRadius: '40%' }} alt="avatar"/>}</Cell>

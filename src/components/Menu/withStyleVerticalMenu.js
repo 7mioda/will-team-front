@@ -62,18 +62,18 @@ export default (component) => styled(component)`
     .menu__logo:after {
       content:'';
       display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: blue;
+      width: 30px;
+      height: 30px;
+      background: url('/icons/close_menu.svg') center center /cover no-repeat;
       margin-left: 105%;
     }
     
     .inactive:after {
       content:'';
       display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: red;
+      width: 30px;
+      height: 30px;
+      background: url('/icons/open_menu.svg') center center /cover no-repeat;
       margin-left: 105%;
     }
     

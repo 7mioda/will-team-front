@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { getAllCredits, removeCredit } from '../../actions/creditActions';
 import AdminLayout from './AdminLayout';
 import { Cell, Head, Row, Table } from '../../components/Table';
@@ -18,7 +19,7 @@ const CreditsList =  ({ getAllCredits, removeCredit, credits, history }) => {
       <Cell>{name || 'none'}</Cell>
       <Cell>{description || 'none'}</Cell>
       <Cell>{interestRate || 'none'}</Cell>
-      <Cell>{ createdAt || 'none' }</Cell>
+      <Cell>{ moment(createdAt).format('YYYY-MM-DD') || 'none' }</Cell>
       <Cell><img src={banner} style={{ height: '50px', width: '50px', borderRadius: '50%' }} alt="avatar"/></Cell>
       <Cell style={{ width: '210px', display: 'flex', justifyContent: 'space-between', height: '85px'}}><Button color="#fff" background="#e66767"  onClick={() => removeCredit(id)}>Delete</Button>
         <Button color="#fff" background="#303952"  onClick={() => history.push(`/team-will-bank/admin/banker/${id}`)}>update</Button></Cell>

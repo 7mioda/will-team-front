@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import moment from 'moment';
 import { connect } from 'react-redux';
 import Layout from '../Layout';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { getAllCreditProposals, updateCreditProposal } from '../../actions/creditProposalActions';
 import Button from '../../components/Button/Button';
-import { Cell } from '../../components/Table';
 
 const CreditProposalDetails =  ({ getAllCreditProposals, updateCreditProposal, proposal }) => {
   useEffect(()=> {
@@ -17,7 +17,7 @@ const CreditProposalDetails =  ({ getAllCreditProposals, updateCreditProposal, p
     <Layout>
       <h2>Détails du demande de crédit</h2>
       <p>{amount}</p>
-      <p>{createdAt}</p>
+      <p>{moment(createdAt).format('YYYY-MM-DD')}</p>
       <p>{status}</p>
       <p>{loan.name}</p>
       { !(status === 'approved') && <Button color="#fff" background="#303952" onClick={(event) => { event.stopPropagation(); updateCreditProposal({ ...proposal, status: 'approved', client: client.id, loan: loan.id }); }}>Approuver</Button> }

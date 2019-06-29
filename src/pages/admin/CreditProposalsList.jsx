@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import AdminLayout from './AdminLayout';
 import { getAllCreditProposals, updateCreditProposal } from '../../actions/creditProposalActions';
 import { Cell, Head, Row, Table } from '../../components/Table';
+import Button from '../../components/Button/Button';
 
 const CreditProposalsList =  ({ getAllCreditProposals, updateCreditProposal, proposals, history }) => {
   useEffect(()=> {
@@ -22,9 +23,9 @@ const CreditProposalsList =  ({ getAllCreditProposals, updateCreditProposal, pro
       <Cell>{ createdAt || 'none'}</Cell>
       <Cell>{ client && client.firstName || 'none'}</Cell>
       <Cell>{ client && client.lastName || 'none'}</Cell>
-      <Cell>{ client && <img src={client.photo} style={{ height: '50px', width: '50px' }} alt="avatar"/>}</Cell>
-      <Cell><button onClick={(event) => { event.stopPropagation(); updateCreditProposal({ ...proposal, status: 'archived', client: client.id, loan: loan.id }); }}>Archiver</button>
-        <button onClick={(event) => { event.stopPropagation(); updateCreditProposal({ ...proposal, status: 'declined', client: client.id, loan: loan.id });}}>Réfuser</button></Cell>
+      <Cell>{ client && <img src={client.photo} style={{ height: '50px', width: '50px', borderRadius: '40%' }} alt="avatar"/>}</Cell>
+      <Cell><Button color="#fff" background="#303952" onClick={(event) => { event.stopPropagation(); updateCreditProposal({ ...proposal, status: 'archived', client: client.id, loan: loan.id }); }}>Archiver</Button>
+        <Button color="#fff" background="#e66767" onClick={(event) => { event.stopPropagation(); updateCreditProposal({ ...proposal, status: 'declined', client: client.id, loan: loan.id });}}>Réfuser </Button></Cell>
     </Row>
   )});
   return(

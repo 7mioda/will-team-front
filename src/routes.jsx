@@ -18,6 +18,7 @@ import CreditDetails from './pages/CreditDetails';
 import CreditProposal from './pages/CreditProposal';
 import CreditProposalsList from './pages/admin/CreditProposalsList';
 import CreditProposalDetails from './pages/admin/CreditProposalDetails';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 const AppRouter =  ({ isAdmin }) => (
   <BrowserRouter>
@@ -36,7 +37,7 @@ const AppRouter =  ({ isAdmin }) => (
       <Route path="/team-will-bank/my-space/credit-proposal/:creditId" component={CreditProposal} />
       <Route path="/team-will-bank/my-space/update-credit/:creditId" component={CreditsList} />
       /* --------------------- ADMIN ----------------------------*/
-      <Route path="/team-will-bank/admin" component={Home} isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}   exact />
+      <Route path="/team-will-bank/admin" component={AdminDashboard} isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}   exact />
       <Route path="/team-will-bank/admin/bankers-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}  component={BankerList} />
       <Route path="/team-will-bank/admin/clients-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}  component={ClientList} />
       <Route path="/team-will-bank/admin/client/:clientId" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={ClientDetails} />

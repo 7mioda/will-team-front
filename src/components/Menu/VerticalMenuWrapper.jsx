@@ -17,6 +17,7 @@ const VerticalMenuWrapper = ({ className, openModal, history, logout }) => {
       <Menu right classNames={menu ? ['menu--active'] : ['menu--inactive']}>
         <MenuItem title="Employees" className='menu-item' onClick={() => history.push('/team-will-bank/admin/bankers-list')}/>
         <MenuItem title="Credits" className='menu-item'  onClick={() => history.push('/team-will-bank/admin/credits-list')}/>
+        <MenuItem title="Demandes Credits" className='menu-item'  onClick={() => history.push('/team-will-bank/admin/credit-proposal-list')}/>
         <MenuItem title="Logout"  className='menu-item'  onClick={logout} />
       </Menu>
     </div>

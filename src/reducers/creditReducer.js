@@ -18,7 +18,7 @@ const creditsReducer = (state = initialState, action) => {
       const { credits } = state;
       return {
         ...state,
-        clients: [payload, ...credits],
+        credits: [payload, ...credits],
       };
     }
     case actions.REMOVE_CREDIT: {

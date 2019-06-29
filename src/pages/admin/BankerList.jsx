@@ -26,7 +26,7 @@ const BankersList =  ({ getAllBankers, bankers, removeBanker, history }) => {
   return(
     <AdminLayout>
       <p>Bankers</p>
-      <Button color="#fff" background="#303952" type="button" style={{ float: 'right'}} onClick={() => history.push('/team-will-bank/admin/add-banker')}>Add Banker</Button>
+      <Button color="#fff" background="#303952" type="button" style={{ float: 'right'}} onClick={() => history.push('/team-will-bank/admin/add-banker')}>Ajouter un employee</Button>
       <Table>
       <Row>
         <Head>Nom</Head>

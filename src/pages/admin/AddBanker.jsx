@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import { addBanker } from '../../actions/bankerActions';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import { Formik } from 'formik/dist/index';
 import AdminLayout from './AdminLayout';
 
-const AddBanker =  ({ addBanker }) => {
+const AddBanker =  ({ addBanker, history }) => {
   const [image, setImage] = useState({});
-  useEffect(()=> {
-    addBanker();
-    return () => undefined;
-  }, []);
   return(
     <AdminLayout>
       <p>Add Banker</p>
       <div style={{ width: '500px', marginLeft: '150px' }}>
       <Formik
         initialValues={{ firstName: '', lastName: '', password: '', photo: '', email: '', registrationNumber: '' }}
-        onSubmit={(values) => {addBanker({ ...values, photo: image }) }}
+        onSubmit={(values) => {addBanker({ ...values, photo: image }); history.push('/team-will-bank/admin/bankers-list') }}
       >
         {(props) => {
           const {
@@ -128,4 +126,4 @@ const AddBanker =  ({ addBanker }) => {
 };
 
 
-export default connect(null, { addBanker })(AddBanker)
+export default compose(withRouter, connect(null, { addBanker }))(AddBanker)

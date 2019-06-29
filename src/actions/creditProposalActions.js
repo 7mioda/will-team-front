@@ -62,9 +62,6 @@ export const updateCreditProposal = data => ({
     method: 'post',
     url: '/loan-contracts/update',
     data,
-    // meta: {
-    //   header: 'multipart/form-data',
-    // },
     success: ({ loanContract }) => setUpdatedCreditProposal(loanContract),
   },
 });

@@ -28,7 +28,7 @@ const creditProposalsReducer = (state = initialState, action) => {
         proposals: proposals.filter(element => element.id !== payload),
       };
     }
-    case actions.UPDATE_CREDIT: {
+    case actions.UPDATE_CREDIT_PROPOSAL: {
       const { proposals } = state;
       return {
         ...state,

@@ -21,7 +21,7 @@ import CreditProposalsList from './pages/admin/CreditProposalsList';
 import CreditProposalDetails from './pages/admin/CreditProposalDetails';
 import AdminDashboard from './pages/admin/AdminDashboard';
 
-const AppRouter =  ({ isAdmin }) => (
+const AppRouter = ({ isAdmin }) => (
   <BrowserRouter>
     <Switch>
       /* --------------------- ANONYMOUS ----------------------------*/
@@ -29,14 +29,32 @@ const AppRouter =  ({ isAdmin }) => (
       <Route path="/team-will-bank/help" component={Help} />
       <Route path="/team-will-bank/agencies-list" component={Agencies} />
       <Route path="/team-will-bank/credits-list" component={CreditsList} />
-      <Route path="/team-will-bank/credit-details/:creditId" component={CreditDetails} />
+      <Route
+        path="/team-will-bank/credit-details/:creditId"
+        component={CreditDetails}
+      />
       /* --------------------- CLIENT ----------------------------*/
       <Route path="/team-will-bank/my-space" component={MySpace} exact />
-      <Route path="/team-will-bank/my-space/credit-details/:creditId" component={Header} />
-      <Route path="/team-will-bank/my-space/credits-proposals" component={CreditsList} />
-      <Route path="/team-will-bank/my-space/submit-credit-proposal/:creditId" component={CreditProposal} />
-      <Route path="/team-will-bank/my-space/credit-proposal/:creditId" component={CreditProposal} />
-      <Route path="/team-will-bank/my-space/update-credit/:creditId" component={CreditsList} />
+      <Route
+        path="/team-will-bank/my-space/credit-details/:creditId"
+        component={Header}
+      />
+      <Route
+        path="/team-will-bank/my-space/credits-proposals"
+        component={CreditsList}
+      />
+      <Route
+        path="/team-will-bank/my-space/submit-credit-proposal/:creditId"
+        component={CreditProposal}
+      />
+      <Route
+        path="/team-will-bank/my-space/credit-proposal/:creditId"
+        component={CreditProposal}
+      />
+      <Route
+        path="/team-will-bank/my-space/update-credit/:creditId"
+        component={CreditsList}
+      />
       /* --------------------- ADMIN ----------------------------*/
       <Route path="/team-will-bank/admin" component={AdminDashboard} isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}   exact />
       <Route path="/team-will-bank/admin/bankers-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}  component={BankerList} />

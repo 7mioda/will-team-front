@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export default (component) => styled(component)`
-  width: calc((100% / 4) - 1.5%);
+  width: 100%;
   color: rgb(118, 118, 118);
-  margin-left: 20px;
   font-size: 10px;
-  padding-bottom: 30px;
-  height: 360px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  height: 560px;
   display: inline-block;
   cursor: pointer;
-  background-color: #000;
+
 
   .card__slider {
     width: 100%;

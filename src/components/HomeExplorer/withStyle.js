@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export default (component) => styled(component)`
   margin: 20px auto;
   color: rgb(72, 72, 72);
+  font-family: Roboto, sans-serif;
   h2 {
     margin-bottom: 20px;
   }

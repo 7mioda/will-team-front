@@ -6,19 +6,32 @@ export default (component) => styled(component)`
   margin-left: 20px;
   font-size: 10px;
   padding-bottom: 30px;
-  height: 360px;
+  height: 310px;
   display: inline-block;
   cursor: pointer;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 5px 10px rgba(0,0,0,0.05),
+     0px 10px 10px rgba(0,0,0,0.05),
+     0px 15px 10px rgba(0,0,0,0.05);
 
   .card__slider {
+    border-radius: 5px;
     width: 100%;
-    height: 70%;
+    height: 90%;
+    img {
+      width: 100%;
+      height: 100%;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-topleft: 5px;
+      }
+    }
   }
 
   .card__body {
-    padding-top: 5px;
+    padding: 5px;
     width: 100%;
-    min-height: 81px;
   }
 
   .card__body h3 {

@@ -10,9 +10,9 @@ const Home = () => (
     <Layout>
         <HomeBanner/>
         <div style={{ maxWidth: '1120px', margin: '10px auto' }}>
-        <HomeExplorer />
-        <HomePlus />
-        <HomeRecommendation />
+                <HomeExplorer />
+                <HomeRecommendation />
+                <HomePlus />
         <HomeHost />
         </div>
     </Layout>

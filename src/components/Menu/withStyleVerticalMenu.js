@@ -25,6 +25,7 @@ export default (component) => styled(component)`
       position: relative;
       color: rgb(72, 72, 72);
       height: 50px;
+      text-align: left;
     }
     .menu-item__title:after {
     position: absolute;
@@ -78,7 +79,7 @@ export default (component) => styled(component)`
     }
     
     .menu--active {
-      transform: translateX(0);
+      transform: translateX(15%);
     }
     
     .menu--inactive {

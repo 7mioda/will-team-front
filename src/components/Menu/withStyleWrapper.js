@@ -6,6 +6,10 @@ export default (component) => styled(component)`
   width: 100%;
   
   .menu__logo {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #e93e8f;
     position: absolute;
     display: inline-block;
     border: none;
@@ -14,6 +18,7 @@ export default (component) => styled(component)`
     background: url('/static/img/airbnb-pink-logo.svg');
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
     left: 24px;
     z-index: 100;
   }

@@ -5,7 +5,7 @@ import withStyle from './withStyle';
 const Footer = ({ className }) => (
   <footer className={`${className}`}>
     <div className="footer-column">
-      <h4>Airbnb</h4>
+      <h4>TWBank</h4>
       <div className="link">Carrières</div>
       <div className="link">Presse</div>
       <div className="link">Règles</div>
@@ -16,21 +16,19 @@ const Footer = ({ className }) => (
     <div className="footer-column">
       <h4>Découvrir</h4>
       <div className="link">Confiance et sécurité</div>
-      <div className="link">Crédit voyage</div>
-      <div className="link">Airbnb Citizen</div>
-      <div className="link">Voyage d'affaires</div>
+      <div className="link">Crédit</div>
+      <div className="link">TWBank Citizen</div>
+      <div className="link">TWBank & affaires</div>
       <div className="link">Guides</div>
-      <div className="link">Airbnbmag</div>
+      <div className="link">TWBankmag</div>
       <div className="link">Événements</div>
     </div>
     <div className="footer-column">
-      <h4>Hébergement</h4>
-      <div className="link">Pourquoi être hôte</div>
-      <div className="link">Hospitalité</div>
-      <div className="link">Hébergement responsable</div>
+      <h4>Services</h4>
+      <div className="link">Pourquoi nous rejoindre</div>
+      <div className="link">Client responsable</div>
       <div className="link">Community Center</div>
-      <div className="link">Organisez une expérienceNouveau</div>
-      <div className="link">Open Homes</div>
+      <div className="link">Open TWBank</div>
     </div>
     <div className="footer-column">
       <div className="social-icons">
@@ -44,7 +42,7 @@ const Footer = ({ className }) => (
     </div>
     <div className="clear-fix" />
     <div className="footer-copyright">
-      <div className="copyright-text">© Airbnb, Inc.</div>
+      <div className="copyright-text">© TWBank, Inc.</div>
     </div>
   </footer>
 );

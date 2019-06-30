@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Route } from './components/Route';
 import Header from './components/Header';
 import CreditsList from './pages/CreditsList';
+import AdminCreditsList from './pages/admin/CreditsList';
 import Home from './pages/Home';
 import Help from './pages/Help';
 import Agencies from './pages/Agencies';
@@ -55,67 +56,16 @@ const AppRouter = ({ isAdmin }) => (
         component={CreditsList}
       />
       /* --------------------- ADMIN ----------------------------*/
-      <Route
-        path="/team-will-bank/admin"
-        component={AdminDashboard}
-        isAuthenticated
-        redirectTo="/team-will-bank/"
-        exact
-      />
-      <Route
-        path="/team-will-bank/admin/bankers-list"
-        isAuthenticated={isAdmin}
-        redirectTo="/team-will-bank/"
-        component={BankerList}
-      />
-      <Route
-        path="/team-will-bank/admin/clients-list"
-        isAuthenticated={isAdmin}
-        redirectTo="/team-will-bank/"
-        component={ClientList}
-      />
-      <Route
-        path="/team-will-bank/admin/client/:clientId"
-        isAuthenticated={isAdmin}
-        redirectTo="/team-will-bank/"
-        component={ClientDetails}
-      />
-      <Route
-        path="/team-will-bank/admin/banker/:bankerId"
-        isAuthenticated={isAdmin}
-        redirectTo="/team-will-bank/"
-        component={BankerDetails}
-      />
-      <Route
-        path="/team-will-bank/admin/credits-list"
-        isAuthenticated={isAdmin}
-        redirectTo={/team-will-bank/}
-        component={CreditsList}
-      />
-      <Route
-        path="/team-will-bank/admin/credit-proposal-list"
-        isAuthenticated
-        redirectTo="/team-will-bank/"
-        component={CreditProposalsList}
-      />
-      <Route
-        path="/team-will-bank/admin/credit-proposal/:proposalId"
-        isAuthenticated
-        redirectTo="/team-will-bank/"
-        component={CreditProposalDetails}
-      />
-      <Route
-        path="/team-will-bank/admin/add-credit"
-        isAuthenticated
-        redirectTo="/team-will-bank/"
-        component={AddCredit}
-      />
-      <Route
-        path="/team-will-bank/admin/add-banker"
-        isAuthenticated={isAdmin}
-        redirectTo="/team-will-bank/"
-        component={AddBanker}
-      />
+      <Route path="/team-will-bank/admin" component={AdminDashboard} isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}   exact />
+      <Route path="/team-will-bank/admin/bankers-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}  component={BankerList} />
+      <Route path="/team-will-bank/admin/clients-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"}  component={ClientList} />
+      <Route path="/team-will-bank/admin/client/:clientId" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={ClientDetails} />
+      <Route path="/team-will-bank/admin/banker/:bankerId" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={BankerDetails} />
+      <Route path="/team-will-bank/admin/credits-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={AdminCreditsList} />
+      <Route path="/team-will-bank/admin/credit-proposal-list" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={CreditProposalsList} />
+      <Route path="/team-will-bank/admin/credit-proposal/:proposalId" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={CreditProposalDetails} />
+      <Route path="/team-will-bank/admin/add-credit" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={AddCredit} />
+      <Route path="/team-will-bank/admin/add-banker" isAuthenticated={isAdmin} redirectTo={"/team-will-bank/"} component={AddBanker} />
     </Switch>
   </BrowserRouter>
 );

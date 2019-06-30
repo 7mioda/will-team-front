@@ -7,9 +7,9 @@ const HomeHost = ({ className }) => (
     <div className="home-host__banner">
       <h1>
         Gagnez jusqu'à
-        483€/mois en hébergeant des voyageurs dans votre logement à Tunis
+        483TND/année avec nos comptes épargne
       </h1>
-      <Button color="#484848" background="#fff" classNames={['home-host__btn']}>
+      <Button color="#fff" background="#e93e8f" classNames={['home-host__btn']}>
           En savoir plus
       </Button>
     </div>

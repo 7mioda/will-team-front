@@ -11,7 +11,7 @@ export default (component) => styled(component)`
     height: 100%;
     padding-right: 100px;
     background: 
-      url('img/home.png')
+      url('/img/home.png')
         right bottom / 40% 80% no-repeat;
   }
   .landing h1 {

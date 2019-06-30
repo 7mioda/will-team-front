@@ -4,6 +4,7 @@ export default (component) => styled(component)`
   position: relative;
   color: rgb(72, 72, 72);
   margin-top: 30px;
+  font-family: Roboto, sans-serif;
   .airbnb-plus__banner {
     width: 100%;
     height: 300px;

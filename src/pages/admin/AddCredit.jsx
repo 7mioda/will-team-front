@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import { Formik } from 'formik/dist/index';
 import AdminLayout from './AdminLayout';
 import { addCredit } from '../../actions/creditActions';
 
-const AddCredit =  ({ addCredit }) => {
+const AddCredit =  ({ addCredit, history }) => {
   const [image, setImage] = useState({});
   return(
     <AdminLayout>
@@ -14,7 +16,7 @@ const AddCredit =  ({ addCredit }) => {
       <div style={{ width: '500px', marginLeft: '150px' }}>
         <Formik
           initialValues={{ name: '', description: '', interestRate: '', photo: '', loanPapers: '' }}
-          onSubmit={(values) => {addCredit({ ...values, photo: image }) }}
+          onSubmit={(values) => {addCredit({ ...values, photo: image }); history.push('/team-will-bank/admin/credits-list')  }}
         >
           {(props) => {
             const {
@@ -111,4 +113,4 @@ const AddCredit =  ({ addCredit }) => {
 };
 
 
-export default connect(null, { addCredit })(AddCredit)
+export default compose(withRouter, connect(null, { addCredit }))(AddCredit)

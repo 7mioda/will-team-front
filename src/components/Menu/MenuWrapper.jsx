@@ -13,7 +13,7 @@ const MenuWrapper = ({ className, isAuthenticated , openModal, logout , history 
   const [menu, setMenu] = useState(false);
   return(
     <div className={`${className}`}>
-      <button className={menu ? 'menu__logo' : 'menu__logo inactive'} type="button" onClick={() => setMenu(!menu)} > TeamWillBanK </button>
+      <button className={menu ? 'menu__logo' : 'menu__logo inactive'} type="button" onClick={() => history.push('/team-will-bank')} > TeamWillBanK </button>
       <Menu right classNames={menu ? ['menu--active'] : ['menu--inactive']}>
         <MenuItem title="Nos agences" onClick={() => history.push('/team-will-bank/agencies-list')}/>
         <MenuItem title="Nos services" onClick={() => history.push('/team-will-bank/credits-list')}/>

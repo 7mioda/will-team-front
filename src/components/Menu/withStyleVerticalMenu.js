@@ -25,6 +25,7 @@ export default (component) => styled(component)`
       position: relative;
       color: rgb(72, 72, 72);
       height: 50px;
+      text-align: left;
     }
     .menu-item__title:after {
     position: absolute;
@@ -62,23 +63,23 @@ export default (component) => styled(component)`
     .menu__logo:after {
       content:'';
       display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: blue;
+      width: 30px;
+      height: 30px;
+      background: url('/icons/close_menu.svg') center center /cover no-repeat;
       margin-left: 105%;
     }
     
     .inactive:after {
       content:'';
       display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: red;
+      width: 30px;
+      height: 30px;
+      background: url('/icons/open_menu.svg') center center /cover no-repeat;
       margin-left: 105%;
     }
     
     .menu--active {
-      transform: translateX(0);
+      transform: translateX(15%);
     }
     
     .menu--inactive {

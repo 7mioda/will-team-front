@@ -10,7 +10,7 @@ export default (component) => styled(component)`
     padding: 0;
   }
   .slide * {
-    object-fit: cover;
+    //object-fit: cover;
     width: 100%;
     height: 100%;
   }
@@ -41,7 +41,7 @@ export default (component) => styled(component)`
     height: 31px;
     width: 31px;
     color: #ffffff;
-    background: transparent;
+    background: #000;
     cursor: pointer;
     z-index: 10;
     transition: all ease-in-out 0.3s;

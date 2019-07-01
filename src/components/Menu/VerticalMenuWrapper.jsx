@@ -9,14 +9,15 @@ import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/authActions';
 
 
-const VerticalMenuWrapper = ({ className, openModal, history, logout }) => {
+const VerticalMenuWrapper = ({ className, isDirector, isBanker , history, logout }) => {
   const [menu, setMenu] = useState(false);
   return(
     <div className={`${className}`}>
       <button className={menu ? 'menu__logo' : 'menu__logo inactive'} type="button" onClick={() => setMenu(!menu)} />
       <Menu right classNames={menu ? ['menu--active'] : ['menu--inactive']}>
-        <MenuItem title="Employees" className='menu-item' onClick={() => history.push('/team-will-bank/admin/bankers-list')}/>
-        <MenuItem title="Credits" className='menu-item'  onClick={() => history.push('/team-will-bank/admin/credits-list')}/>
+        {isDirector && <MenuItem title="Dashboard" className='menu-item'  onClick={() => history.push('/team-will-bank/admin')}/>}
+        {isDirector && <MenuItem title="Employees" className='menu-item' onClick={() => history.push('/team-will-bank/admin/bankers-list')}/>}
+        {isBanker && <MenuItem title="Credits" className='menu-item'  onClick={() => history.push('/team-will-bank/admin/credits-list')}/>}
         <MenuItem title="Demandes Credits" className='menu-item'  onClick={() => history.push('/team-will-bank/admin/credit-proposal-list')}/>
         <MenuItem title="Logout"  className='menu-item'  onClick={logout} />
       </Menu>
@@ -24,4 +25,9 @@ const VerticalMenuWrapper = ({ className, openModal, history, logout }) => {
   );
 };
 
-export default compose(connect(null, { openModal, logout  }), withRouter,withStyle)(VerticalMenuWrapper);
+const mapStateToProps = ({ auth: { as: role, isAuthenticated } }) => ({
+  isDirector: isAuthenticated && role === 'director',
+  isBanker: isAuthenticated && role === 'banker'
+});
+
+export default compose(connect(mapStateToProps, { openModal, logout  }), withRouter,withStyle)(VerticalMenuWrapper);

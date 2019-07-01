@@ -38,7 +38,7 @@ export const login =  ({data, history}) => ({
     url: 'users/login',
     data,
     success: ({ token, refreshToken, user , role = 'user' }) =>
-      authorise(token, refreshToken, user ,role, route(() => role === 'banker' ? history.push('/team-will-bank/admin/'): history.push('/team-will-bank/my-space')) ),
+      authorise(token, refreshToken, user ,role, route(() => role === 'banker' || role === 'director' ? history.push('/team-will-bank/admin/'): history.push('/team-will-bank/my-space')) ),
     error: error => openModal({ title: 'error', body: error }),
   },
 });

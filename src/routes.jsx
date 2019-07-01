@@ -20,6 +20,7 @@ import CreditProposal from './pages/CreditProposal';
 import CreditProposalsList from './pages/admin/CreditProposalsList';
 import CreditProposalDetails from './pages/admin/CreditProposalDetails';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import CreditSettlement from './pages/CreditSettlement';
 
 const AppRouter = ({ isAdmin }) => (
   <BrowserRouter>
@@ -32,6 +33,10 @@ const AppRouter = ({ isAdmin }) => (
       <Route
         path="/team-will-bank/credit-details/:creditId"
         component={CreditDetails}
+      />
+      <Route
+        path="/team-will-bank/credit-settlement/:creditId"
+        component={CreditSettlement}
       />
       /* --------------------- CLIENT ----------------------------*/
       <Route path="/team-will-bank/my-space" component={MySpace} exact />
@@ -71,7 +76,7 @@ const AppRouter = ({ isAdmin }) => (
 );
 
 const mapStateToProps = ({ auth: { as: role, isAuthenticated } }) => ({
-  isAdmin: isAuthenticated && role === 'banker',
+  isAdmin: isAuthenticated && (role === 'banker' || role === 'director'),
 });
 
 export default connect(mapStateToProps)(AppRouter);

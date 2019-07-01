@@ -12,10 +12,6 @@ export const getAllCreditProposals = () => ({
     url: '/loan-contracts',
     method: 'get',
     success: ({ loanContracts }) => setAllCreditProposals(loanContracts),
-    meta: {
-      namespace: 'proposals',
-      check: true,
-    },
   },
 });
 

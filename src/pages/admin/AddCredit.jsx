@@ -15,7 +15,7 @@ const AddCredit =  ({ addCredit, history }) => {
       <p>Add Banker</p>
       <div style={{ width: '500px', marginLeft: '150px' }}>
         <Formik
-          initialValues={{ name: '', description: '', interestRate: '', photo: '', loanPapers: '' }}
+          initialValues={{ name: '', description: '', interestRate: '', photo: '', loanPapers: '', duration: 0 }}
           onSubmit={(values) => {addCredit({ ...values, photo: image }); history.push('/team-will-bank/admin/credits-list')  }}
         >
           {(props) => {
@@ -62,6 +62,19 @@ const AddCredit =  ({ addCredit, history }) => {
                       placeholder="Taux d'intert"
                       name="interestRate"
                       value={values.interestRate}
+                      id="search-input"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="search-input">
+                    <Input
+                      type="email"
+                      highlighted
+                      classNames={['text-field']}
+                      autoCapitalize
+                      placeholder="Durée"
+                      name="duration"
+                      value={values.duration}
                       id="search-input"
                       onChange={handleChange}
                     />

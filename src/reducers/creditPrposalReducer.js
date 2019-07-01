@@ -11,7 +11,7 @@ const creditProposalsReducer = (state = initialState, action) => {
     case actions.ALL_CREDITS_PROPOSALS: {
       return {
         ...state,
-        proposals: payload,
+        proposals: [...state.proposals, ...payload],
       };
     }
     case actions.ADD_CREDIT_PROPOSAL: {

@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "formik": "^1.5.7",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
